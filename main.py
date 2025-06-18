@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'lib'))
@@ -30,7 +31,6 @@ if os.path.exists(MAPPING_FILE):
 query = ' '.join(sys.argv[1:]).strip()
 
 if not query:
-    # Show prompt if empty
     print(json.dumps({"items": [{"title": "Type to search GIFs", "valid": False}]}))
     exit()
 
@@ -67,35 +67,45 @@ for gif in data.get('data', []):
         with open(temp_path, 'wb') as f:
             f.write(img_data)
     except Exception:
-        temp_path = ""  # fallback: no icon
+        temp_path = ""
 
     if temp_path:
         tempfiles_map[gif_media_url] = temp_path
 
     items.append({
-        "title": title,
+        "title": title[:40],  # Alfred Grid truncates long titles
         "subtitle": gif_media_url,
         "arg": gif_media_url,  # Enter = GIF as image
         "icon": {
             "type": "image",
             "path": temp_path
         },
+        "quicklookurl": gif_media_url,  # <-- Enable spacebar preview in Alfred
         "mods": {
             "cmd": {
                 "valid": True,
-                "arg": "copylink:" + gif_media_url,  # Cmd+Enter = copy GIF link
+                "arg": "copylink:" + gif_media_url,
                 "subtitle": "Copy GIF link to clipboard"
             }
+        },
+        "text": {
+            "copy": gif_media_url,
+            "largetype": title
         }
     })
 
 # ---- Add "Search in Giphy" as the last item ----
 search_url = f"https://giphy.com/search/{query}"
+default_icon_path = os.path.join(os.path.dirname(__file__), "giphy_icon.png")
+if not os.path.exists(default_icon_path):
+    default_icon_path = temp_path  # fallback
+
 items.append({
     "title": "Search in Giphy…",
     "subtitle": f"Open all results for '{query}' on Giphy.com",
     "arg": search_url,
-    "valid": True
+    "valid": True,
+    "quicklookurl": search_url  # optional
 })
 
 if tempfiles_map:

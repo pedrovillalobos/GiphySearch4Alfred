@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>giphySearch</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>2AC852A9-D366-44E4-BA31-B10B76F07D31</key>
+		<array/>
+		<key>9FC0D471-84EF-4E1E-B6A6-4F4E62760C0E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A621CF3B-5688-4C21-A44F-20474737B850</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A621CF3B-5688-4C21-A44F-20474737B850</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2AC852A9-D366-44E4-BA31-B10B76F07D31</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Pedro Villalobos</string>
+	<key>description</key>
+	<string>Search for gifs in Giphy.com</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>GiphySearch</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>/usr/bin/python3 handler.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2AC852A9-D366-44E4-BA31-B10B76F07D31</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>gif</string>
+				<key>subtext</key>
+				<string>Search Powered by Giphy</string>
+				<key>text</key>
+				<string>Type [Enter] start searching</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9FC0D471-84EF-4E1E-B6A6-4F4E62760C0E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>columncount</key>
+				<integer>4</integer>
+				<key>filterable</key>
+				<false/>
+				<key>fixedorder</key>
+				<true/>
+				<key>imageaspect</key>
+				<integer>0</integer>
+				<key>inputfile</key>
+				<string>main.py</string>
+				<key>inputtype</key>
+				<integer>1</integer>
+				<key>loadingtext</key>
+				<string>Searching in Giphy.com. It'll take a few seconds...</string>
+				<key>showsubtitles</key>
+				<false/>
+				<key>showtitles</key>
+				<true/>
+				<key>subtitlesinfooter</key>
+				<false/>
+				<key>titlesinfooter</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.grid</string>
+			<key>uid</key>
+			<string>A621CF3B-5688-4C21-A44F-20474737B850</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>GIPHY SEARCH FOR ALFRED
+
+Search for GIFs on Giphy and quickly copy them for use in WhatsApp, Telegram, iMessage, or any app. Search, preview, and copy GIFs right from Alfred.
+
+FEATURES
+	•	Search GIFs: Type ‘gif {query}’ in Alfred to search Giphy
+	•	Preview GIFs: See previews right in your Alfred results
+	•	Copy as image: Press Enter to copy the GIF as an image (good for WhatsApp, iMessage, etc)
+	•	Copy as link: Press Cmd+Enter to copy the GIF URL (for Telegram, Slack, Discord, etc)
+	•	Open in Giphy: “Search in Giphy” row lets you open the results in your browser
+	•	Automatic cleanup: Workflow manages temp files
+	•	No analytics or tracking
+
+SETUP
+	1.	Get your Giphy API key:
+	•	Go to developers.giphy.com and log in or sign up
+	•	Click “Create an App” to get your API key
+	•	Copy your API key
+	2.	Import the workflow into Alfred
+	3.	Set your API key in the workflow settings:
+	•	Open the workflow in Alfred preferences
+	•	Click the [fx] (Variables &amp; Arguments) icon at the top right
+	•	Add a variable named ‘Your_Giphy_API’ and paste your API key as value
+
+
+IMPORTANT
+	•	This is an independent project and is NOT affiliated with Giphy.com
+	•	Your API key is stored only locally, not shared
+	•	Use responsibly and in line with Giphy’s terms
+
+CREDITS
+	•	Made by Pedro Villalobos
+	•	Uses Giphy API
+
+LICENSE
+	•	Provided as-is, no warranty. You are responsible for use.</string>
+	<key>uidata</key>
+	<dict>
+		<key>2AC852A9-D366-44E4-BA31-B10B76F07D31</key>
+		<dict>
+			<key>xpos</key>
+			<real>480</real>
+			<key>ypos</key>
+			<real>195</real>
+		</dict>
+		<key>9FC0D471-84EF-4E1E-B6A6-4F4E62760C0E</key>
+		<dict>
+			<key>xpos</key>
+			<real>150</real>
+			<key>ypos</key>
+			<real>195</real>
+		</dict>
+		<key>A621CF3B-5688-4C21-A44F-20474737B850</key>
+		<dict>
+			<key>xpos</key>
+			<real>315</real>
+			<key>ypos</key>
+			<real>195</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>enter-your-api-key-here</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>To create your Giphy API key, follow the instructions on https://developers.giphy.com/</string>
+			<key>label</key>
+			<string>Giphy API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>Your_Giphy_API</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>defaultvalue</key>
+				<integer>5</integer>
+				<key>markercount</key>
+				<integer>20</integer>
+				<key>maxvalue</key>
+				<integer>20</integer>
+				<key>minvalue</key>
+				<integer>1</integer>
+				<key>onlystoponmarkers</key>
+				<true/>
+				<key>showmarkers</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>How many results do you want to display (the higher number, the lower the results will appear)</string>
+			<key>label</key>
+			<string>Results to Show</string>
+			<key>type</key>
+			<string>slider</string>
+			<key>variable</key>
+			<string>Results_to_Show</string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.5</string>
+	<key>webaddress</key>
+	<string>https://github.com/pedrovillalobos</string>
+</dict>
+</plist>
