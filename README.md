@@ -26,16 +26,14 @@ This Alfred workflow lets you instantly **search for GIFs on Giphy** and quickly
 
 2. **Install the Workflow**
 
-   - Import the `.alfredworkflow` file into Alfred.
+   - Double click the Import the [GiphySearch.alfredworkflow](GiphySearch.alfredworkflow) file into Alfred.
 
 3. **Set Your API Key in Alfred**
 
    - Open the workflow in Alfred preferences.
-   - Click the `[𝑓x]` (Variables & Arguments) icon at the top right of the workflow editor.
-   - Add a new variable:
-     - **Name:** `Your_Giphy_API`
-     - **Value:** *(Paste your Giphy API key here)*
-   - Click "Save".
+   - Click the `Configure Workflow` button at the top left of the workflow editor.
+   - **Giphy API Key:** `Your_Giphy_API`
+   - **Results to Show:** `Select how many results you want to appear`
 
 ---
 
@@ -67,22 +65,25 @@ This Alfred workflow lets you instantly **search for GIFs on Giphy** and quickly
 
 ## 🗝️ API Key Security
 
-Your API key is stored *locally* and used only for your own Giphy searches.  
+Your API key is stored _locally_ and used only for your own Giphy searches.  
 If needed, you can reset or delete your key at [developers.giphy.com](https://developers.giphy.com/).
 
 ---
+
 ## 🤝 Credits
 
 - Built by [Pedro Villalobos](https://github.com/pedrovillalobos/)
 - Powered by [Giphy API](https://developers.giphy.com/)
 
 ---
+
 ##IMPORTANT DISCLAIMER
 
 This workflow is not a product of Giphy.com and is not affiliated with, endorsed, or sponsored by Giphy or its parent company in any way.  
 It is an independent, unofficial project that uses the public Giphy API for personal, non-commercial use.
 
 ---
+
 ## 🛡️ License
 
 This workflow is provided as-is with no warranty.
