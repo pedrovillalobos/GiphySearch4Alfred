@@ -2,6 +2,24 @@
 
 This Alfred workflow lets you instantly **search for GIFs on Giphy** and quickly copy them for use in WhatsApp, Telegram, iMessage, or any app! You can search, preview, and copy GIFs without leaving your keyboard.
 
+## Workaround
+
+At the moment, there are still dependency issues, to overcome those you can follow this in your Terminal:
+
+1. Ensure you have pip installed:
+```
+# Check your pip version
+/usr/bin/python3 -m pip --version
+# If you get an error like "no module named pip", run:
+/usr/bin/python3 -m ensurepip --upgrade
+```
+
+2. Install required modules:
+```
+/usr/bin/python3 -m pip install --upgrade --user requests urllib3 charset_normalizer
+```
+You should now be able to run the search without an issue.
+
 ---
 
 ## ✨ Features
